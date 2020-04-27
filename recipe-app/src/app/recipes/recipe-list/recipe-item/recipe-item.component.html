@@ -1,1 +1,14 @@
-<p>recipe-item works!</p>
+<a 
+    href="#" 
+    class="card d-flex flex-row justify-content-between mb-20 p-3"
+    style="min-width: 18rem;">
+    <div class="d-flex flex-column align-items-start">
+        <h4 class="">
+            {{ dataRecipe.name }}
+        </h4>
+        <span class="">{{ dataRecipe.decription }}</span>
+    </div>
+    <span class="d-flex">
+        <img [src]="dataRecipe.imagePath" alt="{{ dataRecipe.name }}" class="img-responsive" style="max-height: 100px">
+    </span>
+</a>

@@ -5,21 +5,6 @@
 </div>
 <div class="row">
     <div class="col-xs-12">
-        <a 
-        href="#" 
-        class="card d-flex flex-row justify-content-between mb-20 p-3"
-         *ngFor="let recipe of recipes"
-         style="min-width: 18rem;">
-            <div class="d-flex flex-column align-items-start">
-                <h4 class="">
-                    {{ recipe.name }}
-                </h4>
-                <span class="">{{ recipe.decription }}</span>
-           </div>
-            <span class="d-flex">
-                <img [src]="recipe.imagePath" alt="{{ recipe.name }}" class="img-responsive" style="max-height: 100px">
-            </span>
-        </a>
-        <app-recipe-item></app-recipe-item>
+        <app-recipe-item *ngFor="let recipe of recipes" [dataRecipe]="recipe"></app-recipe-item>
     </div>
 </div>
