@@ -4,9 +4,10 @@ import { Recipe } from '../recipe.model';
 @Component({
   selector: 'app-recipe-detail',
   templateUrl: './recipe-detail.component.html',
-  styleUrls: ['./recipe-detail.component.scss', '../../app.component.scss']
+  styleUrls: ['./recipe-detail.component.scss']
 })
 export class RecipeDetailComponent implements OnInit {
+  panelExpanded: boolean;
   @Input() recipeItem: Recipe;
   constructor() { }
 

@@ -15,7 +15,7 @@ export class HeaderComponent implements OnInit {
   }
 
   onSelect(page: string) {
-    this.showPage.emit(page)
+    this.showPage.emit(page);
   }
 
 }

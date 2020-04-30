@@ -1,1 +1,71 @@
 /* You can add global styles to this file, and also import other style files */
+body, p, span, div {
+    font-size: 14px;
+}
+/* margin bottom */
+.mb-8 {
+    margin-bottom: 8px;
+}
+.mb-16 {
+    margin-bottom: 16px;
+}
+.mb-20 {
+    margin-bottom: 20px;
+}
+.mb-24 {
+    margin-bottom: 24px;
+}
+.mb-30 {
+    margin-bottom: 30px;
+}
+/* margin top */
+.mt-8 {
+    margin-top: 8px;
+}
+.mt-16 {
+    margin-top: 16px;
+}
+.mt-20 {
+    margin-top: 20px;
+}
+.mt-24 {
+    margin-top: 24px;
+}
+.mt-30 {
+    margin-top: 30px;
+}
+/* margin right */
+.mr-8 {
+    margin-right: 8px;
+}
+.mr-16 {
+    margin-right: 16px;
+}
+.mr-20 {
+    margin-right: 20px;
+}
+.mr-24 {
+    margin-right: 24px;
+}
+.mr-30 {
+    margin-right: 30px;
+}
+/* margin left */
+.ml-8 {
+    margin-left: 8px;
+}
+.ml-16 {
+    margin-left: 16px;
+}
+.ml-20 {
+    margin-left: 20px;
+}
+.ml-24 {
+    margin-left: 24px;
+}
+.ml-30 {
+    margin-left: 30px;
+}
+.show .dropdown-menu {
+    display: block;
+}

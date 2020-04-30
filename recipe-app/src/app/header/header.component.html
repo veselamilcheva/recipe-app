@@ -1,20 +1,33 @@
 <nav class="navbar navbar-expand-md navbar-light sticky-top" style="background-color: #e3f2fd;">
     <a href="#" class="navbar-brand"> <img class="logo" src="../../assets/logo.svg" width="30" height="30" alt="">&nbsp;&nbsp;Recipe Book</a>
-    <button class="nav-btn navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="true" (click)="isCollapsed = !isCollapsed" aria-label="Toggle navigation">
+    <button 
+        class="nav-btn navbar-toggler navbar-toggler-right" 
+        type="button" 
+        data-toggle="collapse" 
+        data-target="#navbarNavAltMarkup" 
+        aria-controls="navbarNavAltMarkup" 
+        aria-expanded="true" 
+        (click)="isCollapsed = !isCollapsed" 
+        aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
-    <div class="collapse navbar-collapse"  id="navbarNavAltMarkup">
+    <div class="collapse navbar-collapse" [ngClass]="{'previewMenuShow': isCollapsed === true}" id="navbarNavAltMarkup">
         <div class="navbar-nav">
             <a class="nav-item nav-link" href="#" (click)="onSelect('recipe')">Recipes</a>
             <a class="nav-item nav-link" href="#" (click)="onSelect('shopping')" >Shopping List</a>
         </div>
         <div class="nav navbar-nav ml-auto">
-            <div class="dropdown">
-                <a href="#" class="dropdown-toggle" role="button">Manage <i class="carret"></i></a>
-                <div class="dropdown-menu">
-                    <a class="nav-item nav-link" href="#">Save data</a>
-                    <a class="nav-item nav-link" href="#">Fetch data</a>
-                </div>
+            <div class="dropdown" appDropdown>
+                <a href="#" 
+                class="dropdown-toggle" 
+                role="button"
+                >Manage 
+                    <i class="carret"></i>
+                </a>
+                <ul class="dropdown-menu" style="left: -80px;">
+                    <li><a class="nav-item nav-link" href="#">Save data</a></li>
+                    <li><a class="nav-item nav-link" href="#">Fetch data</a></li>
+                </ul>
             </div>
         </div>
     </div>

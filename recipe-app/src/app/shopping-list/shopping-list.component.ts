@@ -4,7 +4,7 @@ import { Ingredient } from '../shared/ingredient.module';
 @Component({
   selector: 'app-shopping-list',
   templateUrl: './shopping-list.component.html',
-  styleUrls: ['./shopping-list.component.scss', '../app.component.scss']
+  styleUrls: ['./shopping-list.component.scss']
 })
 export class ShoppingListComponent implements OnInit {
   ingredients: Ingredient[] = [];
