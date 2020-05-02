@@ -13,8 +13,13 @@ export class ShoppingListService {
         return this.ingredients.slice()
     }
 
-    onAddedIngredients(ingredient: Ingredient) {
+    onAddedIngredient(ingredient: Ingredient) {
         this.ingredients.push(ingredient);
+        this.ingredientsChanged.emit(this.ingredients.slice());
+    }
+
+    onAddedBulkIngredients(ingredients: Ingredient[]) {
+        this.ingredients = this.ingredients.concat(ingredients);
         this.ingredientsChanged.emit(this.ingredients.slice());
     }
     

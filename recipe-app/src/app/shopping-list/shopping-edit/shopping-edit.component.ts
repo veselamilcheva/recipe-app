@@ -22,7 +22,7 @@ ingredients = [];
     const ingrName = this.nameInputRef.nativeElement.value;
     const ingrAmount = this.amountInputRef.nativeElement.value;
     const newIngredient = new Ingredient(ingrName, ingrAmount);
-    this.shoppingListService.onAddedIngredients(newIngredient);
+    this.shoppingListService.onAddedIngredient(newIngredient);
   }
   onDeleteIngredients() {
     this.shoppingListService.onDeletedIngredients();
