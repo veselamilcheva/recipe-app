@@ -1,6 +1,8 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit} from '@angular/core';
 import { Recipe } from '../recipe.model';
+import { ActivatedRoute, Params } from '@angular/router';
 import { ShoppingListService } from 'src/app/shopping-list/shopping-list.service';
+import { RecipeService } from '../recipe.service';
 
 @Component({
   selector: 'app-recipe-detail',
@@ -9,11 +11,21 @@ import { ShoppingListService } from 'src/app/shopping-list/shopping-list.service
 })
 export class RecipeDetailComponent implements OnInit {
   panelExpanded: boolean;
-  @Input() recipeItem: Recipe;
+  recipeItem: Recipe;
+  id: number;
 
-  constructor(private shoppingList: ShoppingListService) { }
+  constructor(
+    private recipeService: RecipeService,
+    private shoppingList: ShoppingListService, 
+    private route: ActivatedRoute) { }
 
   ngOnInit(): void {
+    this.route.params.subscribe(
+      (params: Params) => {
+        this.id = +params.id;
+        this.recipeItem = this.recipeService.getRecipe(this.id);
+      }
+    );
   }
 
   addIngredientsBulk() {
