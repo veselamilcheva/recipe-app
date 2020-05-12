@@ -69,3 +69,36 @@ body, p, span, div {
 .show .dropdown-menu {
     display: block;
 }
+.btn.btn-info {
+    background-color: #9dcbec;
+    border: 1px solid #7DA2BC;
+    outline: none;
+    color: rgba(0,0,0,.9);
+    box-shadow: 0 0 0 0.2rem #B0D5EF;
+}
+.btn.btn-info:focus {
+    outline: none;
+    box-shadow: 0 0 0 0.2rem #B0D5EF;
+}
+.btn.btn-info:active {
+    outline: none;
+    background-color: #7DA2BC;
+    box-shadow: 0 0 0 0.2rem #B0D5EF;
+}
+
+.btn-info:not(:disabled):not(.disabled).active, .btn-info:not(:disabled):not(.disabled):active, .show>.btn-info.dropdown-toggle {
+    background-color: #7DA2BC;
+    border: 1px solid #6d8ea5;
+    color: #000000;
+    outline: none;
+    box-shadow: 0 0 0 0.2rem #B0D5EF;
+}
+.btn-info.dropdown-toggle:focus {
+    box-shadow: 0 0 0 0.2rem #B0D5EF;
+}
+.btn-info:not(:disabled):not(.disabled).active:focus, .btn-info:not(:disabled):not(.disabled):active:focus, .show>.btn-info.dropdown-toggle:focus {
+    box-shadow: 0 0 0 0.2rem #B0D5EF;
+}
+img {
+    border: 1px solid #7DA2BC;
+}

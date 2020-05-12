@@ -1,8 +1,9 @@
 import { Component, OnInit} from '@angular/core';
 import { Recipe } from '../recipe.model';
-import { ActivatedRoute, Params } from '@angular/router';
+import { ActivatedRoute, Params, Router } from '@angular/router';
 import { ShoppingListService } from 'src/app/shopping-list/shopping-list.service';
 import { RecipeService } from '../recipe.service';
+import {DomSanitizer} from '@angular/platform-browser';
 
 @Component({
   selector: 'app-recipe-detail',
@@ -13,11 +14,14 @@ export class RecipeDetailComponent implements OnInit {
   panelExpanded: boolean;
   recipeItem: Recipe;
   id: number;
+  showImage = true;
 
   constructor(
     private recipeService: RecipeService,
     private shoppingList: ShoppingListService, 
-    private route: ActivatedRoute) { }
+    private route: ActivatedRoute,
+    public sanitizer: DomSanitizer,
+    private router: Router) { }
 
   ngOnInit(): void {
     this.route.params.subscribe(
@@ -30,6 +34,14 @@ export class RecipeDetailComponent implements OnInit {
 
   addIngredientsBulk() {
     this.shoppingList.onAddedBulkIngredients(this.recipeItem.ingredients);
+  }
+
+  onShowImage() {
+    this.showImage = !this.showImage;
+  }
+
+  onEditRecipe() {
+    this.router.navigate(['edit'], {relativeTo: this.route})
   }
 
 }
