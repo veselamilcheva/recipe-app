@@ -1,6 +1,6 @@
 <div class="row">
     <div class="col-xs-12">
-        <form class="mt-16">
+        <form (ngSubmit)="onSubmit(f)" class="mt-16" #f="ngForm">
             <div class="d-flex">
                 <div class="col-sm-6 form-group">
                     <label for="name">Name</label>
@@ -8,7 +8,10 @@
                     type="text" 
                     class="form-control" 
                     id="name"
-                    #nameInput>
+                    name="name"
+                    ngModel
+                    required
+                    >
                 </div>
                 <div class="col-sm-4 form-group">
                     <label for="name">Amount</label>
@@ -16,13 +19,17 @@
                     type="number" 
                     class="form-control" 
                     id="amount"
-                    #amountInput>
+                    name="amount"
+                    ngModel
+                    required
+                    pattern="^[1-9]+[0-9]*$"
+                    >
                 </div>
             </div>
             <div class="d-flex">
-                <div class="btn btn-success ml-16 mr-16" type="submit" (click)="onAddIngredients()">Add</div>
-                <div class="btn btn-danger mr-16" type="button" (click)="onDeleteIngredients()">Delete</div>
-                <div class="btn btn-primary" type="button"(click)="onClearIngredients()">Clear</div>
+                <button class="btn btn-success ml-16 mr-16" [disabled]="!f.valid" type="submit">{{ editMode ? 'Update' :  'Add' }}</button>
+                <button *ngIf="editMode" class="btn btn-danger mr-16" type="button" (click)="onDeleteIngredient()">Delete</button>
+                <button class="btn btn-primary" type="button"(click)="onClearIngredients()">Clear</button>
             </div>
         </form>
     </div>
