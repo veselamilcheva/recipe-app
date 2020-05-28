@@ -10,6 +10,25 @@
 .previewMenuShow {
     display: block;
 }
+.navbar-nav .nav-item.nav-link {
+    padding-left: 5px;
+}
 .navbar-nav .nav-item.nav-link.active {
     background: #9dcbec;
 } 
+@media only screen and (min-width: 768px) {
+    .ml-auto.spec-nav {
+        right:85px; 
+        position: relative;
+    }
+}
+@media only screen and (max-width: 768px) {
+    .ml-auto.spec-nav {
+        .dropdown-toggle {
+            padding-left: 5px;
+        }
+        .dropdown-toggle.active {
+            background: #9dcbec;
+        }
+    } 
+}

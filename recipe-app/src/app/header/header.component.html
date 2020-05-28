@@ -1,26 +1,28 @@
-<nav class="navbar navbar-expand-md navbar-light sticky-top" style="background-color: #e3f2fd;">
-    <a href="#" class="navbar-brand"> <img class="logo" src="../../assets/logo.svg" width="30" height="30"
-            alt="">&nbsp;&nbsp;Recipe Book</a>
-    <button class="nav-btn navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse"
-        data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="true"
-        (click)="isCollapsed = !isCollapsed" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" [ngClass]="{'previewMenuShow': isCollapsed === true}" id="navbarNavAltMarkup">
-        <div class="navbar-nav">
-            <a class="nav-item nav-link" routerLinkActive="active" routerLink="/recipes">Recipes</a>
-            <a class="nav-item nav-link" routerLinkActive="active" routerLink="/shopping-list">Shopping List</a>
-        </div>
-        <div class="nav navbar-nav ml-auto">
-            <div class="dropdown" appDropdown>
-                <a class="dropdown-toggle" role="button">Manage
-                    <i class="carret"></i>
-                </a>
-                <ul class="dropdown-menu" style="left: -80px;">
-                    <li><a class="nav-item nav-link">Save data</a></li>
-                    <li><a class="nav-item nav-link">Fetch data</a></li>
-                </ul>
+<div>
+    <nav class="navbar navbar-expand-md navbar-light sticky-top" style="background-color: #e3f2fd;">
+        <a href="#" class="navbar-brand"> <img class="logo" src="../../assets/logo.svg" width="30" height="30"
+                alt="">&nbsp;&nbsp;Recipe Book</a>
+        <button class="nav-btn navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse"
+            data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="true"
+            (click)="isCollapsed = !isCollapsed" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" [ngClass]="{'previewMenuShow': isCollapsed === true}" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+                <a class="nav-item nav-link" routerLinkActive="active" routerLink="/recipes">Recipes</a>
+                <a class="nav-item nav-link" routerLinkActive="active" routerLink="/shopping-list">Shopping List</a>
+            </div>
+            <div class="nav navbar-nav ml-auto spec-nav">
+                <div class="dropdown" appDropdown>
+                    <a class="dropdown-toggle" role="button">Manage
+                        <i class="carret"></i>
+                    </a>
+                    <ul class="dropdown-menu" style="text-align: center;">
+                        <li><a class="dropdown-item">Save data</a></li>
+                        <li><a class="dropdown-item">Fetch data</a></li>
+                    </ul>
+                </div>
             </div>
         </div>
-    </div>
-</nav>
+    </nav>
+</div>
