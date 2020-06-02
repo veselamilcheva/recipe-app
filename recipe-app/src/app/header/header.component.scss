@@ -16,6 +16,10 @@
 .navbar-nav .nav-item.nav-link.active {
     background: #9dcbec;
 } 
+.dropdown-toggle, .dropdown li  {
+    cursor: pointer;
+}
+
 @media only screen and (min-width: 768px) {
     .ml-auto.spec-nav {
         right:85px; 

@@ -4,28 +4,12 @@ import { Subject } from 'rxjs';
 
 export class RecipeService {
     recipeChanged = new Subject<Recipe[]>(); //we use this to update the data
-    private recipes: Recipe[] = [
-        new Recipe(
-            'Banitsa', 
-            'Bulgarian dish', 
-            ['../../assets/banitsa.jpg', 
-            'https://www.youtube.com/embed/APR8rkCUZxg'], 
-            [
-                new Ingredient('cheese', 1),
-                new Ingredient('yogurt', 1)
-            ]
-        ),
-        new Recipe(
-            'Musaka', 
-            'Greek dish', 
-            ['../../assets/musaka.jpg', 
-            'https://www.youtube.com/embed/86PShBcVE9E'], 
-            [
-                new Ingredient('gound beef', 1),
-                new Ingredient('patatos', 1)
-            ]
-        )
-    ];
+    private recipes: Recipe[] = [];
+
+    setRecipes(recipes: Recipe[]) {
+        this.recipes = recipes;
+        this.recipeChanged.next(this.recipes.slice())
+    }
 
     getRecipes() {
         return this.recipes.slice();
