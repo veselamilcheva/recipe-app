@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { RecipeService } from '../recipes/recipe.service';
 import { Recipe } from '../recipes/recipe.model';
 import { map, tap } from 'rxjs/operators';
+import { environment } from '../../environments/environment';
 
 @Injectable({ providedIn: 'root' })
 export class DataStorageService {
@@ -11,14 +12,14 @@ export class DataStorageService {
     }
     storeRecipes() {
         const recipes = this.recipesService.getRecipes();
-        return this.http.put('https://recipe-app-59bd0.firebaseio.com/recipes.json', recipes).subscribe(response => {
+        return this.http.put(environment.firebaseUrl + '/recipes.json', recipes).subscribe(response => {
             console.log(response);
         })
     }
 
     getRecipes() {
         return this.http
-            .get<Recipe[]>('https://recipe-app-59bd0.firebaseio.com/recipes.json')
+            .get<Recipe[]>(environment.firebaseUrl + '/recipes.json')
             .pipe(
                 map(recipes => {
                     console.log(recipes)
