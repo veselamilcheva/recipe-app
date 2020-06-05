@@ -14,7 +14,7 @@
                 <a class="nav-item nav-link" routerLinkActive="active" routerLink="/shopping-list">Shopping List</a>
             </div>
             <div class="nav navbar-nav ml-auto spec-nav">
-                <a *ngIf="isAuthenticated" class="button-menu mr-16" role="button" style="cursor:pointer;">Logout</a>
+                <a *ngIf="isAuthenticated" class="button-menu mr-16" role="button" style="cursor:pointer;" (click)="onLogout()">Logout</a>
                 <div *ngIf="isAuthenticated" class="dropdown" appDropdown>
                     <a class="dropdown-toggle" role="button">Manage
                         <i class="carret"></i>
