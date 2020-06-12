@@ -1,4 +1,4 @@
-<div class="mt-24 mb-24 carousel slide row" data-ride="carousel">
+<div class="mt-24 mb-24 carousel slide" data-ride="carousel">
     <div class="carousel-inner">
         <div class="carousel-item" [ngClass]="{'active': showImage}">
             <img [src]="recipeItem.imagePath[0]" alt="{{ recipeItem.name }}" width="100%"
@@ -21,17 +21,17 @@
     </a>
 </div>
 
-<div class="row">
+<div class="">
     <div class="col-xs-12">
         <h2>{{ recipeItem.name }}</h2>
     </div>
 </div>
-<div class="row">
+<div class="">
     <div class="col-xs-12">
         <p>{{ recipeItem.description }}</p>
     </div>
 </div>
-<div class="row mb-24">
+<div class="mb-24">
     <div class="col-xs-12">
         <div class="btn-group dropdown" appDropdown>
             <button class="btn btn-info dropdown-toggle">
@@ -46,7 +46,7 @@
         </div>
     </div>
 </div>
-<div class="row">
+<div class="">
     <div class="col-xs-12">
         <ul class="list-group">
             <li *ngFor="let ingredient of recipeItem.ingredients" class="list-group-item">{{ ingredient.name }} -
