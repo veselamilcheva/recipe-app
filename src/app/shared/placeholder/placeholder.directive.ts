@@ -4,5 +4,5 @@ import { Directive, ViewContainerRef } from '@angular/core';
     selector: '[appPlaceholder]'
 })
 export class PlaceholderDirective {
-    constructor(public vieContainerRef: ViewContainerRef) {}
+    constructor(public viewContainerRef: ViewContainerRef) {}
 }

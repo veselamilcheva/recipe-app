@@ -72,7 +72,7 @@ export class AuthComponent implements OnInit, OnDestroy {
 
   private showErrorAlert(message: string) {
     const alertCmpFactory =  this.componentFactoryResolver.resolveComponentFactory(AlertComponent);  //create component dynamically
-    const hostViewContainerRef = this.alertHost.vieContainerRef;
+    const hostViewContainerRef = this.alertHost.viewContainerRef;
     hostViewContainerRef.clear();
 
     const componentRef = hostViewContainerRef.createComponent(alertCmpFactory);

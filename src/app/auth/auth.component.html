@@ -2,7 +2,7 @@
     <div class="wrapper-login d-flex justify-content-center align-items-center flex-column">
         <!-- <app-alert [message]="error" *ngIf="!isLoading && error" (close)="onHandleerror()"></app-alert> -->
         <ng-template appPlaceholder></ng-template>
-        <form *ngIf="!isLoading" class="col-md-4" #authForm="ngForm" (ngSubmit)="onSubmit(authForm)">
+        <form *ngIf="!isLoading" class="col-md-6" #authForm="ngForm" (ngSubmit)="onSubmit(authForm)">
             <div class="form-group">
                 <label for="email"> Email</label>
                 <input 
