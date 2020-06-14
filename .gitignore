@@ -47,3 +47,4 @@ Thumbs.db
 
 # Local config file
 environment.local.ts
+environment.prod.ts
